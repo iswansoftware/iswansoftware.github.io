@@ -109,7 +109,7 @@ const CONFIG = {
       // demo:        "#",
     },
     {
-      title:       "Bel Sekola Otomatis berbasis ESP8266 dan Arduino",
+      title:       "Bel Sekolah Otomatis berbasis ESP8266 dan Arduino",
       description: "Bel sekolah otomatis menggunakan ESP8266 dan Arduino, dengan fitur pengaturan jadwal, notifikasi suara, dan kontrol jarak jauh.",
       icon:        "fa-bell",
       gradient:    "from-accent/30 to-orange-500/20",
