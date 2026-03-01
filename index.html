@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abdul Kholid I, S.Kom. — Full Stack Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: { sans: ["Inter", "sans-serif"], mono: ["Fira Code", "monospace"] },
+            colors: {
+              primary: "#7C3AED",
+              secondary: "#06B6D4",
+              accent: "#F59E0B",
+              dark: { 900: "#0A0A0F", 800: "#111118", 700: "#1A1A24", 600: "#22222F", 500: "#2E2E3E" },
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              glow: "glow 2s ease-in-out infinite alternate",
+              "slide-up": "slideUp 0.6s ease-out",
+              "fade-in": "fadeIn 0.8s ease-out",
+            },
+            keyframes: {
+              float: { "0%, 100%": { transform: "translateY(0px)" }, "50%": { transform: "translateY(-20px)" } },
+              glow: { from: { boxShadow: "0 0 20px #7C3AED44" }, to: { boxShadow: "0 0 40px #7C3AED88, 0 0 80px #7C3AED33" } },
+              slideUp: { from: { opacity: 0, transform: "translateY(40px)" }, to: { opacity: 1, transform: "translateY(0)" } },
+              fadeIn: { from: { opacity: 0 }, to: { opacity: 1 } },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-dark-900 text-gray-100 font-sans overflow-x-hidden">
+    <!-- ========== NAVBAR ========== -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+      <div class="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        <a href="#home" class="font-mono text-xl font-semibold text-primary"> &lt;<span class="text-white">AKI</span>/&gt; </a>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <li><a href="#about" class="nav-link hover:text-primary transition-colors">About</a></li>
+          <li><a href="#skills" class="nav-link hover:text-primary transition-colors">Skills</a></li>
+          <li><a href="#experience" class="nav-link hover:text-primary transition-colors">Experience</a></li>
+          <li><a href="#projects" class="nav-link hover:text-primary transition-colors">Projects</a></li>
+          <li><a href="#education" class="nav-link hover:text-primary transition-colors">Education</a></li>
+          <li><a href="#contact" class="px-5 py-2 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300">Contact</a></li>
+        </ul>
+        <!-- Mobile Hamburger -->
+        <button id="menuBtn" class="md:hidden text-gray-300 focus:outline-none">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-dark-800 border-t border-dark-600 mt-2">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+          <li><a href="#about" class="mobile-nav block hover:text-primary transition-colors">About</a></li>
+          <li><a href="#skills" class="mobile-nav block hover:text-primary transition-colors">Skills</a></li>
+          <li><a href="#experience" class="mobile-nav block hover:text-primary transition-colors">Experience</a></li>
+          <li><a href="#projects" class="mobile-nav block hover:text-primary transition-colors">Projects</a></li>
+          <li><a href="#education" class="mobile-nav block hover:text-primary transition-colors">Education</a></li>
+          <li><a href="#contact" class="mobile-nav block hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      <!-- Background Blobs -->
+      <div class="absolute top-20 left-10 w-72 h-72 bg-primary opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary opacity-10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary opacity-5 rounded-full blur-[100px] pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <!-- Text -->
+        <div class="animate-slide-up">
+          <p class="font-mono text-secondary text-sm mb-3 tracking-widest">👋 Hello, World! I'm</p>
+          <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-2">
+            Abdul Kholid<br />
+            <span class="gradient-text">Iswan</span>
+          </h1>
+          <p class="text-gray-400 text-lg mb-2 font-light">S.Kom.</p>
+          <div class="flex items-center gap-2 mb-6">
+            <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+            <span id="typedRole" class="font-mono text-lg text-primary font-medium"></span>
+          </div>
+          <p class="text-gray-400 leading-relaxed mb-8 max-w-md">Full Stack Developer yang berfokus membangun aplikasi web modern, scalable, dan berperforma tinggi. Berpengalaman di bidang freelance dengan teknologi terkini.</p>
+          <div class="flex flex-wrap gap-4">
+            <a href="#projects" class="px-7 py-3 bg-primary hover:bg-violet-700 rounded-full font-medium transition-all duration-300 shadow-lg shadow-primary/30 hover:shadow-primary/50">
+              Lihat Proyek <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+            <a href="#contact" class="px-7 py-3 border border-dark-500 hover:border-primary rounded-full font-medium transition-all duration-300 text-gray-300 hover:text-primary"> Hubungi Saya </a>
+          </div>
+          <!-- Social Links -->
+          <div class="flex gap-4 mt-8">
+            <a
+              href="https://github.com/abdulkholidiswan"
+              target="_blank"
+              class="social-icon w-10 h-10 rounded-full border border-dark-500 flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-300"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon w-10 h-10 rounded-full border border-dark-500 flex items-center justify-center hover:border-secondary hover:text-secondary transition-all duration-300">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="mailto:abdulkholidiswan@email.com" class="social-icon w-10 h-10 rounded-full border border-dark-500 flex items-center justify-center hover:border-accent hover:text-accent transition-all duration-300">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Avatar / Code Card -->
+        <div class="hidden md:flex justify-center items-center">
+          <div class="relative animate-float">
+            <!-- Profile Circle -->
+            <div class="w-72 h-72 rounded-full border-2 border-primary/30 animate-glow flex items-center justify-center relative">
+              <div class="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center overflow-hidden">
+                <div class="text-center">
+                  <div class="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-secondary mx-auto mb-2 flex items-center justify-center text-5xl font-bold text-white">AK</div>
+                  <p class="text-white font-semibold text-sm">Abdul Kholid I</p>
+                  <p class="text-gray-400 text-xs mt-1">Full Stack Developer</p>
+                </div>
+              </div>
+            </div>
+            <!-- Floating Tech Badges -->
+            <div class="absolute -top-4 -right-4 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2 text-xs font-mono shadow-lg"><span class="text-orange-400">React</span> <span class="text-gray-500">⚛️</span></div>
+            <div class="absolute -bottom-4 -left-4 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2 text-xs font-mono shadow-lg"><span class="text-red-400">Laravel</span> <span class="text-gray-500">🔴</span></div>
+            <div class="absolute top-1/2 -right-16 bg-dark-700 border border-dark-500 rounded-xl px-3 py-2 text-xs font-mono shadow-lg"><span class="text-yellow-400">JS</span> <span class="text-gray-500">⚡</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+        <span class="text-gray-500 text-xs font-mono tracking-widest">SCROLL</span>
+        <i class="fas fa-chevron-down text-gray-500 text-xs"></i>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT SECTION ========== -->
+    <section id="about" class="py-24 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">01. ABOUT</p>
+          <h2 class="text-4xl font-bold">Tentang <span class="gradient-text">Saya</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <div class="bg-dark-700 rounded-2xl border border-dark-500 p-1 inline-block mb-6">
+              <div class="flex gap-1.5 px-3 py-2">
+                <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500"></span>
+              </div>
+              <div class="px-4 pb-4 font-mono text-sm text-gray-300 space-y-1">
+                <p><span class="text-primary">const</span> <span class="text-secondary">developer</span> = {</p>
+                <p class="pl-4"><span class="text-accent">"name"</span>: <span class="text-green-400">"Abdul Kholid Iswan"</span>,</p>
+                <p class="pl-4"><span class="text-accent">"title"</span>: <span class="text-green-400">"S.Kom."</span>,</p>
+                <p class="pl-4"><span class="text-accent">"role"</span>: <span class="text-green-400">"Full Stack Developer"</span>,</p>
+                <p class="pl-4"><span class="text-accent">"location"</span>: <span class="text-green-400">"Indonesia 🇮🇩"</span>,</p>
+                <p class="pl-4"><span class="text-accent">"available"</span>: <span class="text-blue-400">true</span></p>
+                <p>};</p>
+              </div>
+            </div>
+          </div>
+          <div class="reveal space-y-5">
+            <p class="text-gray-300 leading-relaxed text-lg">Saya adalah seorang <strong class="text-white">Full Stack Developer</strong> lulusan Institut Sains Teknologi Palapa Malang jurusan Teknik Informatika.</p>
+            <p class="text-gray-400 leading-relaxed">
+              Dengan pengalaman di bidang freelance, saya telah membangun berbagai aplikasi web menggunakan teknologi modern seperti <span class="text-primary">React.js</span>, <span class="text-red-400">Laravel</span>, dan
+              <span class="text-yellow-400">JavaScript</span>. Saya berkomitmen untuk menghasilkan kode yang bersih, efisien, dan mudah dipelihara.
+            </p>
+            <p class="text-gray-400 leading-relaxed">Saya selalu antusias mempelajari teknologi baru dan terbuka untuk peluang kolaborasi yang menarik.</p>
+            <div class="grid grid-cols-2 gap-4 pt-4">
+              <div class="bg-dark-700 border border-dark-500 rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold text-primary">3+</p>
+                <p class="text-gray-400 text-sm mt-1">Tahun Pengalaman</p>
+              </div>
+              <div class="bg-dark-700 border border-dark-500 rounded-xl p-4 text-center">
+                <p class="text-3xl font-bold text-secondary">20+</p>
+                <p class="text-gray-400 text-sm mt-1">Proyek Selesai</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS SECTION ========== -->
+    <section id="skills" class="py-24 bg-dark-800 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">02. SKILLS</p>
+          <h2 class="text-4xl font-bold">Tech <span class="gradient-text">Stack</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Frontend -->
+          <div class="reveal skill-card bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                <i class="fas fa-palette text-primary"></i>
+              </div>
+              <h3 class="font-semibold text-white text-lg">Frontend</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-html5 text-orange-500"></i> HTML5 / CSS3</span>
+                  <span class="text-primary font-mono">95%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full skill-bar" data-width="95"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-js text-yellow-400"></i> JavaScript</span>
+                  <span class="text-primary font-mono">90%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full skill-bar" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-react text-cyan-400"></i> React.js</span>
+                  <span class="text-primary font-mono">85%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full skill-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-bootstrap text-purple-400"></i> Bootstrap / Tailwind</span>
+                  <span class="text-primary font-mono">90%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-primary to-secondary rounded-full skill-bar" data-width="90"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Backend -->
+          <div class="reveal skill-card bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-secondary/50 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-secondary/20 flex items-center justify-center">
+                <i class="fas fa-server text-secondary"></i>
+              </div>
+              <h3 class="font-semibold text-white text-lg">Backend</h3>
+            </div>
+            <div class="space-y-4">
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-laravel text-red-500"></i> Laravel</span>
+                  <span class="text-secondary font-mono">90%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-secondary to-cyan-400 rounded-full skill-bar" data-width="90"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fab fa-php text-indigo-400"></i> PHP</span>
+                  <span class="text-secondary font-mono">88%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-secondary to-cyan-400 rounded-full skill-bar" data-width="88"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fas fa-database text-blue-400"></i> MySQL</span>
+                  <span class="text-secondary font-mono">85%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-secondary to-cyan-400 rounded-full skill-bar" data-width="85"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <div class="flex justify-between text-sm mb-1.5">
+                  <span class="text-gray-300 flex items-center gap-2"><i class="fas fa-code text-green-400"></i> REST API</span>
+                  <span class="text-secondary font-mono">80%</span>
+                </div>
+                <div class="h-1.5 bg-dark-500 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-secondary to-cyan-400 rounded-full skill-bar" data-width="80"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools -->
+          <div class="reveal skill-card bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-accent/50 transition-all duration-300">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center">
+                <i class="fas fa-tools text-accent"></i>
+              </div>
+              <h3 class="font-semibold text-white text-lg">Tools & Others</h3>
+            </div>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">GitHub</span>
+              <span class="tech-badge">VS Code</span>
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Postman</span>
+              <span class="tech-badge">Docker</span>
+              <span class="tech-badge">Linux</span>
+              <span class="tech-badge">Vite</span>
+              <span class="tech-badge">npm/yarn</span>
+              <span class="tech-badge">Composer</span>
+              <span class="tech-badge">XAMPP</span>
+              <span class="tech-badge">Vue.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE SECTION ========== -->
+    <section id="experience" class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">03. EXPERIENCE</p>
+          <h2 class="text-4xl font-bold">Pengalaman <span class="gradient-text">Kerja</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="relative">
+          <!-- Timeline Line -->
+          <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"></div>
+
+          <!-- Timeline Item -->
+          <div class="reveal relative flex gap-8 mb-12">
+            <div class="hidden md:flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center z-10 flex-shrink-0">
+                <i class="fas fa-laptop-code text-primary text-xl"></i>
+              </div>
+            </div>
+            <div class="flex-1 bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 md:ml-4 group">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-white group-hover:text-primary transition-colors">Full Stack Developer</h3>
+                  <p class="text-primary font-medium mt-1">Freelance / Self-Employed</p>
+                </div>
+                <span class="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-xs font-mono whitespace-nowrap"> 2022 — Sekarang </span>
+              </div>
+              <ul class="space-y-2 text-gray-400 text-sm">
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> Membangun aplikasi web end-to-end menggunakan Laravel + React.js</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> Merancang dan mengimplementasikan REST API untuk kebutuhan client</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> Pengembangan dan maintenance sistem manajemen berbasis web</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> Konsultasi teknis dan optimasi performa aplikasi untuk klien</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> Mengelola version control menggunakan Git & GitHub</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="tech-badge-sm">Laravel</span>
+                <span class="tech-badge-sm">React.js</span>
+                <span class="tech-badge-sm">JavaScript</span>
+                <span class="tech-badge-sm">MySQL</span>
+                <span class="tech-badge-sm">REST API</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline Item 2 -->
+          <div class="reveal relative flex gap-8 mb-12">
+            <div class="hidden md:flex flex-col items-center">
+              <div class="w-16 h-16 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center z-10 flex-shrink-0">
+                <i class="fas fa-code text-secondary text-xl"></i>
+              </div>
+            </div>
+            <div class="flex-1 bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-secondary/50 transition-all duration-300 md:ml-4 group">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="text-xl font-semibold text-white group-hover:text-secondary transition-colors">Web Developer</h3>
+                  <p class="text-secondary font-medium mt-1">Projek Kampus / Akademik</p>
+                </div>
+                <span class="px-3 py-1 bg-secondary/10 border border-secondary/30 rounded-full text-secondary text-xs font-mono whitespace-nowrap"> 2020 — 2022 </span>
+              </div>
+              <ul class="space-y-2 text-gray-400 text-sm">
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-secondary mt-0.5 flex-shrink-0"></i> Membangun sistem informasi berbasis web untuk tugas akhir</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-secondary mt-0.5 flex-shrink-0"></i> Mengembangkan aplikasi dengan PHP native dan Framework Laravel</li>
+                <li class="flex gap-2"><i class="fas fa-chevron-right text-secondary mt-0.5 flex-shrink-0"></i> Berkolaborasi dalam tim pengembangan aplikasi web kampus</li>
+              </ul>
+              <div class="flex flex-wrap gap-2 mt-4">
+                <span class="tech-badge-sm">PHP</span>
+                <span class="tech-badge-sm">Laravel</span>
+                <span class="tech-badge-sm">HTML/CSS</span>
+                <span class="tech-badge-sm">MySQL</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS SECTION ========== -->
+    <section id="projects" class="py-24 bg-dark-800 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">04. PROJECTS</p>
+          <h2 class="text-4xl font-bold">Proyek <span class="gradient-text">Unggulan</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Project Card 1 -->
+          <div class="reveal project-card bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-br from-primary/30 to-secondary/20 relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-dark-800/40"></div>
+              <i class="fas fa-shopping-cart text-6xl text-primary/40 relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
+              <div class="absolute top-3 right-3 flex gap-1">
+                <span class="px-2 py-0.5 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-xs">Live</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-primary transition-colors">E-Commerce Platform</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Sistem e-commerce lengkap dengan fitur manajemen produk, keranjang belanja, payment gateway, dan dashboard admin.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-badge-sm">Laravel</span>
+                <span class="tech-badge-sm">React.js</span>
+                <span class="tech-badge-sm">MySQL</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors"> <i class="fab fa-github"></i> Code </a>
+                <a href="#" class="flex items-center gap-2 text-sm text-gray-400 hover:text-secondary transition-colors"> <i class="fas fa-external-link-alt"></i> Demo </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 2 -->
+          <div class="reveal project-card bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-secondary/50 transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-br from-secondary/30 to-primary/20 relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-dark-800/40"></div>
+              <i class="fas fa-tasks text-6xl text-secondary/40 relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
+              <div class="absolute top-3 right-3 flex gap-1">
+                <span class="px-2 py-0.5 bg-blue-500/20 border border-blue-500/40 rounded-full text-blue-400 text-xs">Completed</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-secondary transition-colors">Sistem Manajemen Tugas</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Aplikasi manajemen tugas & proyek dengan fitur kolaborasi tim, tracking progress, notifikasi real-time.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-badge-sm">React.js</span>
+                <span class="tech-badge-sm">Laravel API</span>
+                <span class="tech-badge-sm">WebSocket</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors"> <i class="fab fa-github"></i> Code </a>
+                <a href="#" class="flex items-center gap-2 text-sm text-gray-400 hover:text-secondary transition-colors"> <i class="fas fa-external-link-alt"></i> Demo </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 3 -->
+          <div class="reveal project-card bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-accent/50 transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-br from-accent/30 to-orange-500/20 relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-dark-800/40"></div>
+              <i class="fas fa-graduation-cap text-6xl text-accent/40 relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
+              <div class="absolute top-3 right-3 flex gap-1">
+                <span class="px-2 py-0.5 bg-green-500/20 border border-green-500/40 rounded-full text-green-400 text-xs">Live</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-accent transition-colors">Sistem Informasi Sekolah</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Aplikasi SIAKAD sekolah dengan manajemen siswa, guru, nilai, absensi, dan laporan akademik.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-badge-sm">Laravel</span>
+                <span class="tech-badge-sm">JavaScript</span>
+                <span class="tech-badge-sm">Bootstrap</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors"> <i class="fab fa-github"></i> Code </a>
+                <a href="#" class="flex items-center gap-2 text-sm text-gray-400 hover:text-secondary transition-colors"> <i class="fas fa-external-link-alt"></i> Demo </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 4 -->
+          <div class="reveal project-card bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-pink-500/50 transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-br from-pink-500/30 to-purple-500/20 relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-dark-800/40"></div>
+              <i class="fas fa-blog text-6xl text-pink-500/40 relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-pink-400 transition-colors">Blog CMS Platform</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Platform blog modern dengan fitur CMS, editor rich text, SEO optimized, dan manajemen konten.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-badge-sm">Laravel</span>
+                <span class="tech-badge-sm">React.js</span>
+                <span class="tech-badge-sm">TailwindCSS</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors"> <i class="fab fa-github"></i> Code </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 5 -->
+          <div class="reveal project-card bg-dark-700 border border-dark-500 rounded-2xl overflow-hidden hover:border-green-500/50 transition-all duration-300 group">
+            <div class="h-48 bg-gradient-to-br from-green-500/30 to-teal-500/20 relative flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-dark-800/40"></div>
+              <i class="fas fa-chart-line text-6xl text-green-500/40 relative z-10 group-hover:scale-110 transition-transform duration-300"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="font-semibold text-white text-lg mb-2 group-hover:text-green-400 transition-colors">Dashboard Analytics</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-4">Dashboard analitik bisnis dengan visualisasi data interaktif, laporan real-time, dan export PDF.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="tech-badge-sm">React.js</span>
+                <span class="tech-badge-sm">Chart.js</span>
+                <span class="tech-badge-sm">Laravel API</span>
+              </div>
+              <div class="flex gap-3">
+                <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-2 text-sm text-gray-400 hover:text-primary transition-colors"> <i class="fab fa-github"></i> Code </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Card 6 - More Projects -->
+          <div class="reveal project-card bg-dark-700 border border-dashed border-dark-500 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-300 group flex items-center justify-center min-h-[350px]">
+            <div class="text-center p-6">
+              <div class="w-16 h-16 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-all duration-300">
+                <i class="fab fa-github text-primary text-2xl"></i>
+              </div>
+              <h3 class="font-semibold text-white mb-2">Lihat Semua Proyek</h3>
+              <p class="text-gray-400 text-sm mb-4">Temukan lebih banyak proyek di GitHub saya</p>
+              <a href="https://github.com/abdulkholidiswan" target="_blank" class="px-5 py-2 bg-primary/20 hover:bg-primary border border-primary/40 rounded-full text-primary hover:text-white text-sm transition-all duration-300">
+                Kunjungi GitHub <i class="fas fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION SECTION ========== -->
+    <section id="education" class="py-24 relative">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">05. EDUCATION</p>
+          <h2 class="text-4xl font-bold">Riwayat <span class="gradient-text">Pendidikan</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+        </div>
+        <div class="reveal">
+          <div class="bg-dark-700 border border-dark-500 rounded-2xl p-8 hover:border-primary/50 transition-all duration-300 relative overflow-hidden group">
+            <!-- Decorative BG -->
+            <div class="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl pointer-events-none group-hover:bg-primary/10 transition-all duration-300"></div>
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+              <div class="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/30 flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-university text-primary text-3xl"></i>
+              </div>
+              <div class="flex-1">
+                <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
+                  <div>
+                    <h3 class="text-xl font-bold text-white">Institut Sains Teknologi Palapa Malang</h3>
+                    <p class="text-primary font-medium mt-1">S1 Teknik Informatika</p>
+                  </div>
+                  <span class="px-4 py-1.5 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-mono"> Lulus S.Kom. </span>
+                </div>
+                <p class="text-gray-400 leading-relaxed mb-4">Menempuh pendidikan di bidang Teknik Informatika dengan fokus pada pengembangan perangkat lunak, pemrograman web, dan rekayasa sistem informasi.</p>
+                <div class="flex flex-wrap gap-3">
+                  <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i class="fas fa-map-marker-alt text-primary"></i>
+                    <span>Malang, Jawa Timur</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i class="fas fa-book text-secondary"></i>
+                    <span>Teknik Informatika</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-sm text-gray-400">
+                    <i class="fas fa-award text-accent"></i>
+                    <span>Gelar S.Kom.</span>
+                  </div>
+                </div>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="tech-badge-sm">Pemrograman Web</span>
+                  <span class="tech-badge-sm">Rekayasa Perangkat Lunak</span>
+                  <span class="tech-badge-sm">Basis Data</span>
+                  <span class="tech-badge-sm">Algoritma & Struktur Data</span>
+                  <span class="tech-badge-sm">Sistem Informasi</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT SECTION ========== -->
+    <section id="contact" class="py-24 bg-dark-800 relative overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="section-header text-center mb-16">
+          <p class="font-mono text-secondary text-sm tracking-widest mb-2">06. CONTACT</p>
+          <h2 class="text-4xl font-bold">Mari <span class="gradient-text">Terhubung</span></h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-primary to-secondary mx-auto mt-4 rounded-full"></div>
+          <p class="text-gray-400 mt-6 max-w-xl mx-auto">Saya terbuka untuk peluang kerja sama, freelance, atau sekadar berdiskusi tentang teknologi. Jangan ragu untuk menghubungi!</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Contact Info -->
+          <div class="reveal space-y-4">
+            <a href="mailto:abdulkholidiswan@email.com" class="flex items-center gap-4 bg-dark-700 border border-dark-500 rounded-xl p-5 hover:border-primary/50 transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300">
+                <i class="fas fa-envelope text-primary text-xl"></i>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs font-mono">EMAIL</p>
+                <p class="text-white font-medium">abdulkholidiswan@email.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/abdulkholidiswan" target="_blank" class="flex items-center gap-4 bg-dark-700 border border-dark-500 rounded-xl p-5 hover:border-primary/50 transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-gray-700/50 flex items-center justify-center group-hover:bg-gray-700 transition-all duration-300">
+                <i class="fab fa-github text-white text-xl"></i>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs font-mono">GITHUB</p>
+                <p class="text-white font-medium">@abdulkholidiswan</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-4 bg-dark-700 border border-dark-500 rounded-xl p-5 hover:border-secondary/50 transition-all duration-300 group">
+              <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-all duration-300">
+                <i class="fab fa-linkedin-in text-secondary text-xl"></i>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs font-mono">LINKEDIN</p>
+                <p class="text-white font-medium">Abdul Kholid Iswan</p>
+              </div>
+            </a>
+            <div class="flex items-center gap-4 bg-dark-700 border border-dark-500 rounded-xl p-5">
+              <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center">
+                <span class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></span>
+              </div>
+              <div>
+                <p class="text-gray-500 text-xs font-mono">STATUS</p>
+                <p class="text-green-400 font-medium">Tersedia untuk Proyek Baru</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="reveal bg-dark-700 border border-dark-500 rounded-2xl p-6">
+            <h3 class="font-semibold text-white text-lg mb-5">Kirim Pesan</h3>
+            <form id="contactForm" class="space-y-4">
+              <div>
+                <label class="block text-gray-400 text-sm mb-1.5">Nama</label>
+                <input type="text" placeholder="Nama Anda" class="w-full bg-dark-800 border border-dark-500 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none transition-colors text-sm" />
+              </div>
+              <div>
+                <label class="block text-gray-400 text-sm mb-1.5">Email</label>
+                <input type="email" placeholder="email@example.com" class="w-full bg-dark-800 border border-dark-500 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none transition-colors text-sm" />
+              </div>
+              <div>
+                <label class="block text-gray-400 text-sm mb-1.5">Pesan</label>
+                <textarea
+                  rows="4"
+                  placeholder="Tulis pesan Anda..."
+                  class="w-full bg-dark-800 border border-dark-500 rounded-xl px-4 py-3 text-white placeholder-gray-600 focus:border-primary focus:outline-none transition-colors text-sm resize-none"
+                ></textarea>
+              </div>
+              <button type="submit" class="w-full py-3 bg-green-600 hover:bg-green-700 rounded-xl font-medium transition-all duration-300 shadow-lg shadow-green-600/20 hover:shadow-green-600/40 flex items-center justify-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i> Kirim via WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="py-8 border-t border-dark-600">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="font-mono text-gray-500 text-sm">&lt;<span class="text-primary">AKI</span>/&gt; — Dibuat dengan <i class="fas fa-heart text-red-500"></i> oleh Abdul Kholid Iswan</p>
+        <p class="text-gray-600 text-sm font-mono">© 2026 All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
