@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <!-- Background gradient circle -->
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1A1A2E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0F0F1A;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="skinGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" style="stop-color:#FDDBB4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8A87C;stop-opacity:1" />
+    </radialGradient>
+    <radialGradient id="shirtGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" style="stop-color:#7C3AED;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5B21B6;stop-opacity:1" />
+    </radialGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+
+  <!-- Outer glow ring -->
+  <circle cx="200" cy="200" r="196" fill="none" stroke="#7C3AED" stroke-width="2" opacity="0.4"/>
+
+  <g clip-path="url(#circle)">
+    <!-- Body / Shirt -->
+    <ellipse cx="200" cy="370" rx="120" ry="80" fill="url(#shirtGrad)"/>
+    <rect x="80" y="310" width="240" height="100" fill="#5B21B6"/>
+
+    <!-- Shirt collar / neckline -->
+    <path d="M165,310 Q200,340 235,310" fill="#4C1D95" stroke="#4C1D95" stroke-width="1"/>
+
+    <!-- T-shirt text: <DEV/> -->
+    <text x="200" y="365" text-anchor="middle" font-family="monospace" font-size="18" font-weight="bold" fill="#A78BFA" opacity="0.9">&lt;DEV/&gt;</text>
+
+    <!-- Neck -->
+    <rect x="182" y="272" width="36" height="45" rx="10" fill="url(#skinGrad)"/>
+
+    <!-- Head -->
+    <ellipse cx="200" cy="225" rx="72" ry="78" fill="url(#skinGrad)"/>
+
+    <!-- Hair - top -->
+    <path d="M128,210 Q130,140 200,135 Q270,140 272,210 Q260,175 200,172 Q140,175 128,210Z" fill="#2C1A0E"/>
+    <!-- Hair sides -->
+    <path d="M128,210 Q120,230 130,240 Q134,200 145,190Z" fill="#2C1A0E"/>
+    <path d="M272,210 Q280,230 270,240 Q266,200 255,190Z" fill="#2C1A0E"/>
+    <!-- Hair fade on forehead -->
+    <path d="M145,175 Q175,162 200,160 Q225,162 255,175 Q240,168 200,166 Q160,168 145,175Z" fill="#1A0F07"/>
+
+    <!-- Ears -->
+    <ellipse cx="128" cy="230" rx="12" ry="16" fill="#E8A87C"/>
+    <ellipse cx="272" cy="230" rx="12" ry="16" fill="#E8A87C"/>
+    <ellipse cx="128" cy="230" rx="7" ry="10" fill="#D4936A"/>
+    <ellipse cx="272" cy="230" rx="7" ry="10" fill="#D4936A"/>
+
+    <!-- Glasses frame -->
+    <rect x="148" y="212" width="42" height="28" rx="8" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <rect x="210" y="212" width="42" height="28" rx="8" fill="none" stroke="#1A1A1A" stroke-width="4"/>
+    <!-- Glasses bridge -->
+    <line x1="190" y1="226" x2="210" y2="226" stroke="#1A1A1A" stroke-width="4"/>
+    <!-- Glasses arm left -->
+    <line x1="148" y1="226" x2="128" y2="228" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- Glasses arm right -->
+    <line x1="252" y1="226" x2="272" y2="228" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- Glasses lens tint -->
+    <rect x="149" y="213" width="40" height="26" rx="7" fill="#06B6D4" opacity="0.12"/>
+    <rect x="211" y="213" width="40" height="26" rx="7" fill="#06B6D4" opacity="0.12"/>
+
+    <!-- Eyes -->
+    <ellipse cx="169" cy="226" rx="8" ry="9" fill="#1A0F07"/>
+    <ellipse cx="231" cy="226" rx="8" ry="9" fill="#1A0F07"/>
+    <!-- Eye shine -->
+    <circle cx="172" cy="223" r="2.5" fill="white"/>
+    <circle cx="234" cy="223" r="2.5" fill="white"/>
+
+    <!-- Eyebrows -->
+    <path d="M153,210 Q169,204 185,208" stroke="#2C1A0E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+    <path d="M215,208 Q231,204 247,210" stroke="#2C1A0E" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+
+    <!-- Nose -->
+    <path d="M196,232 Q194,248 190,254 Q200,258 210,254 Q206,248 204,232" fill="#D4936A" opacity="0.7"/>
+
+    <!-- Smile / mouth -->
+    <path d="M183,268 Q200,282 217,268" stroke="#C97F5A" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+    <!-- Chin shadow -->
+    <ellipse cx="200" cy="292" rx="45" ry="10" fill="#D4936A" opacity="0.3"/>
+
+    <!-- Laptop hint at bottom -->
+    <rect x="90" y="388" width="220" height="12" rx="4" fill="#374151" opacity="0.8"/>
+    <rect x="100" y="376" width="200" height="14" rx="3" fill="#1F2937" opacity="0.7"/>
+    <!-- Screen glow on face -->
+    <ellipse cx="200" cy="350" rx="100" ry="20" fill="#06B6D4" opacity="0.05"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <circle cx="45" cy="80" r="4" fill="#7C3AED" opacity="0.6"/>
+  <circle cx="60" cy="50" r="2.5" fill="#06B6D4" opacity="0.5"/>
+  <circle cx="355" cy="80" r="4" fill="#06B6D4" opacity="0.6"/>
+  <circle cx="340" cy="50" r="2.5" fill="#7C3AED" opacity="0.5"/>
+  <circle cx="40" cy="320" r="3" fill="#F59E0B" opacity="0.4"/>
+  <circle cx="360" cy="320" r="3" fill="#F59E0B" opacity="0.4"/>
+</svg>
