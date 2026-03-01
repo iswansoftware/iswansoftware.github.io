@@ -40,7 +40,7 @@ const CONFIG = {
 
   // ===== PENDIDIKAN =====
   education: {
-    university:  "Institut Sains Teknologi Palapa Malang",
+    university:  "Institut Sains dan Teknologi Palapa",
     major:       "S1 Teknik Informatika",
     badge:       "Lulus S.Kom.",
     location:    "Malang, Jawa Timur",
@@ -55,6 +55,7 @@ const CONFIG = {
       company: "Freelance / Self-Employed",
       period:  "2015 — Sekarang",
       icon:    "fa-laptop-code",
+      color:   "primary",
       tasks: [
         "Membangun aplikasi web end-to-end menggunakan Laravel + React.js",
         "Merancang dan mengimplementasikan REST API untuk kebutuhan client",
@@ -69,6 +70,7 @@ const CONFIG = {
       company: "Freelance / Self-Employed",
       period:  "2018 — Sekarang",
       icon:    "fa-microchip",
+      color:   "green-400",
       tasks: [
         "Merancang dan memprogram sistem berbasis Arduino, ESP8266, dan ESP32",
         "Membangun perangkat IoT untuk otomasi rumah, monitoring sensor, dan kontrol jarak jauh",

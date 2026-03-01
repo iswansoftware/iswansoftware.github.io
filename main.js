@@ -63,30 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
     if (expList) {
       expList.innerHTML = `
         <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-transparent hidden md:block"></div>
-        ${CONFIG.experiences.map(exp => `
+        ${CONFIG.experiences.map(exp => {
+          const c = exp.color || 'primary';
+          return `
           <div class="reveal relative flex gap-8 mb-12">
             <div class="hidden md:flex flex-col items-center">
-              <div class="w-16 h-16 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center z-10 flex-shrink-0">
-                <i class="fas ${exp.icon} text-primary text-xl"></i>
+              <div class="w-16 h-16 rounded-full bg-${c}/20 border-2 border-${c} flex items-center justify-center z-10 flex-shrink-0">
+                <i class="fas ${exp.icon} text-${c} text-xl"></i>
               </div>
             </div>
-            <div class="flex-1 bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-primary/50 transition-all duration-300 md:ml-4 group">
+            <div class="flex-1 bg-dark-700 border border-dark-500 rounded-2xl p-6 hover:border-${c}/50 transition-all duration-300 md:ml-4 group">
               <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
                 <div>
-                  <h3 class="text-xl font-semibold text-white group-hover:text-primary transition-colors">${exp.role}</h3>
-                  <p class="text-primary font-medium mt-1">${exp.company}</p>
+                  <h3 class="text-xl font-semibold text-white group-hover:text-${c} transition-colors">${exp.role}</h3>
+                  <p class="text-${c} font-medium mt-1">${exp.company}</p>
                 </div>
-                <span class="px-3 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-xs font-mono whitespace-nowrap">${exp.period}</span>
+                <span class="px-3 py-1 bg-${c}/10 border border-${c}/30 rounded-full text-${c} text-xs font-mono whitespace-nowrap">${exp.period}</span>
               </div>
               <ul class="space-y-2 text-gray-400 text-sm">
-                ${exp.tasks.map(t => `<li class="flex gap-2"><i class="fas fa-chevron-right text-primary mt-0.5 flex-shrink-0"></i> ${t}</li>`).join('')}
+                ${exp.tasks.map(t => `<li class="flex gap-2"><i class="fas fa-chevron-right text-${c} mt-0.5 flex-shrink-0"></i> ${t}</li>`).join('')}
               </ul>
               <div class="flex flex-wrap gap-2 mt-4">
                 ${exp.techs.map(t => `<span class="tech-badge-sm">${t}</span>`).join('')}
               </div>
             </div>
           </div>
-        `).join('')}
+        `}).join('')}
       `;
     }
 
